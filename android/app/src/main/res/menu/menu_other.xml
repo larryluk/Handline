@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.zylu.location.ui.OtherActivity">
+
+    <item android:id="@+id/regist"
+        android:title="注册"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom" />
+    <item android:id="@+id/add_friend"
+        android:title="加好友"
+        android:icon="@drawable/add_friend"
+        app:showAsAction="ifRoom" />
+</menu>

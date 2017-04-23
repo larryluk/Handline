@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <com.zylu.location.widget.CleanableEditView
+            android:id="@+id/rUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/registUserName"
+            android:background="@drawable/edit_selector"
+            android:alpha="0.8" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/line"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:alpha="0.7" />
+
+        <com.zylu.location.widget.CleanableEditView
+            android:id="@+id/rPassWord"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/registPassWord"
+            android:inputType="textPassword"
+            android:background="@drawable/edit_selector"
+            android:alpha="0.8" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/line"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:alpha="0.7" />
+
+        <com.zylu.location.widget.CleanableEditView
+            android:id="@+id/rEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/registEmail"
+            android:background="@drawable/edit_selector"
+            android:alpha="0.8" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/line"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:alpha="0.7" />
+
+        <com.zylu.location.widget.CleanableEditView
+            android:id="@+id/rRealName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/registRealname"
+            android:background="@drawable/edit_selector"
+            android:alpha="0.8" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/line"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:alpha="0.7" />
+
+    </LinearLayout>
+
+
+    <Button android:id="@+id/registBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="注  册"
+        android:background="@drawable/shape"
+        android:layout_marginTop="25dp"
+        android:textSize="24dp"/>
+</LinearLayout>

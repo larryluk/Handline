@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgcolor"
+    android:gravity="center">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginBottom="15dp"
+        android:layout_gravity="center_vertical">
+        <com.zylu.location.widget.CleanableEditView
+            android:id="@+id/userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:drawableHeight="25dp"
+            app:drawableWidth="25dp"
+            android:hint="@string/userName"
+            android:background="@drawable/edit_selector"
+            android:padding="10dp"
+            android:textSize="22dp"
+            android:alpha="0.8"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/line"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:alpha="0.7" />
+
+        <com.zylu.location.widget.CleanableEditView
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:drawableHeight="20dp"
+            app:drawableWidth="20dp"
+            android:hint="@string/passWord"
+            android:background="@drawable/edit_selector"
+            android:inputType="textPassword"
+            android:padding="10dp"
+            android:textSize="22dp"
+            android:alpha="0.7" />
+    </LinearLayout>
+
+
+    <Button android:id="@+id/loginBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape"
+        android:text="登录"
+        android:layout_gravity="center_vertical"
+        android:textSize="22dp"
+        android:alpha="0.8" />
+
+    <TextView android:id="@+id/tv_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="没有帐号？"
+        android:textSize="24dp"
+        android:layout_margin="15dp"
+        android:autoLink="web"
+        android:gravity="right"/>
+</LinearLayout>
