@@ -8,16 +8,16 @@ android {
     signingConfigs {
         //调试版的keystore
         debug {
-            storeFile file("C:\\Users\\Administrator\\Desktop\\graduate design\\key.store.jks")
-//            storeFile file("G:\\Android project\\key.store.jks")
+//            storeFile file("C:\\Users\\Administrator\\Desktop\\graduate design\\key.store.jks")
+            storeFile file("G:\\Android project\\key.store.jks")
             storePassword "123456"
             keyAlias "key"
             keyPassword "123456"
         }
         //发布版的keystore
         release {
-            storeFile file("C:\\Users\\Administrator\\Desktop\\graduate design\\key.store.jks")
-//            storeFile file("G:\\Android project\\key.store.jks")
+//            storeFile file("C:\\Users\\Administrator\\Desktop\\graduate design\\key.store.jks")
+            storeFile file("G:\\Android project\\key.store.jks")
             storePassword "123456"
             keyAlias "key"
             keyPassword "123456"
