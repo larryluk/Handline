@@ -19,4 +19,10 @@ public interface IFragmentContentManage {
     void onChange(@NonNull int FragmentID, HashMap<String, Object> params);
 
     void changeMenu(@NonNull boolean addFriendFlag, @NonNull boolean registerFlag);
+
+    /**
+     * 改变标题
+     * @param title
+     */
+    void changeTitle(@NonNull String title);
 }

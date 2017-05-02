@@ -29,6 +29,7 @@ import com.zylu.location.widget.CleanableEditView;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -48,6 +49,8 @@ public class LoginFragment extends Fragment implements LoginView {
     Button loginBtn;
     @BindView(R.id.tv_register)
     TextView tvRegister;
+    @BindString(R.string.loginFragmentTitle)
+    String title;
 
     private ProgressDialog dialog;
     private LoginPresenter loginPresenter;
@@ -67,6 +70,7 @@ public class LoginFragment extends Fragment implements LoginView {
         if (fragmentContentManage == null) {
             fragmentContentManage = (IFragmentContentManage) getActivity();
         }
+
         userName.setAlpha(0.8f);
         password.setAlpha(0.8f);
 
@@ -104,11 +108,9 @@ public class LoginFragment extends Fragment implements LoginView {
 
     @Override
     public void loginSuccess(LoginResult result) {
-        Gson gson = new Gson();
-        Toast.makeText(getActivity(), gson.toJson(result), Toast.LENGTH_SHORT).show();
+        Toast.makeText(getActivity(), "登陆成功", Toast.LENGTH_SHORT).show();
 
         User user = result.getUser();
-
         SharedPreferences.Editor edit = getActivity().getSharedPreferences(Constants.USER_KEY, Constants.MODE_PRIVATE).edit();
         edit.putString(Constants.USER_ID, user.getId());
         edit.putString(Constants.USER_NAME, user.getUserName());
@@ -116,8 +118,6 @@ public class LoginFragment extends Fragment implements LoginView {
         edit.putString(Constants.ROLE, user.getRole());
         edit.putString(Constants.EMAIL, user.getEmail());
         edit.putString(Constants.RONG_TOKEN, result.getToken());
-
-
         edit.commit();
 
         fragmentContentManage.onChange(R.layout.activity_main, null);
@@ -156,6 +156,8 @@ public class LoginFragment extends Fragment implements LoginView {
         if (fragmentContentManage == null)
             fragmentContentManage = (IFragmentContentManage) getActivity();
         fragmentContentManage.changeMenu(false, true);
+        fragmentContentManage.changeTitle(title);
+
     }
 
     @OnClick(R.id.tv_register)

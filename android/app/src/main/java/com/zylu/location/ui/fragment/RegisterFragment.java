@@ -23,6 +23,7 @@ import com.zylu.location.mvp.view.IFragmentContentManage;
 import com.zylu.location.mvp.view.LoginView;
 import com.zylu.location.widget.CleanableEditView;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -42,6 +43,8 @@ public class RegisterFragment extends Fragment implements LoginView {
     CleanableEditView rRealName;
     @BindView(R.id.registBtn)
     Button registBtn;
+    @BindString(R.string.registFragmentTitle)
+    String title;
 
     private RegisterPresenter registerPresenter;
     private IFragmentContentManage fragmentContentManage;
@@ -51,9 +54,9 @@ public class RegisterFragment extends Fragment implements LoginView {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_register, container, false);
-
-        init();
         ButterKnife.bind(this, view);
+        init();
+
         return view;
     }
 
@@ -64,6 +67,8 @@ public class RegisterFragment extends Fragment implements LoginView {
 
         registerPresenter = new RegisterPresenterImpl();
         registerPresenter.attachView(this);
+
+        fragmentContentManage.changeTitle(title);
     }
 
     @Override

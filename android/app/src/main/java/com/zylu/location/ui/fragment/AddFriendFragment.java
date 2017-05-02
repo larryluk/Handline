@@ -27,6 +27,7 @@ import com.zylu.location.mvp.view.IFragmentContentManage;
 import com.zylu.location.util.Constants;
 import com.zylu.location.widget.CleanableEditView;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -41,6 +42,7 @@ public class AddFriendFragment extends Fragment implements AddFriendView {
     CleanableEditView addUserName;
     @BindView(R.id.search_friend_btn)
     Button searchFriendBtn;
+    @BindString(R.string.addFriendFragmentTitle) String title;
 
     private IFragmentContentManage fragmentContentManage;
 
@@ -51,9 +53,8 @@ public class AddFriendFragment extends Fragment implements AddFriendView {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_add_friend, container, false);
-
-        init();
         ButterKnife.bind(this, view);
+        init();
         return view;
     }
 
@@ -61,6 +62,8 @@ public class AddFriendFragment extends Fragment implements AddFriendView {
         if (fragmentContentManage == null) {
             fragmentContentManage = (IFragmentContentManage) getActivity();
         }
+
+        fragmentContentManage.changeTitle(title);
 
         dialog = new ProgressDialog(getActivity());
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);

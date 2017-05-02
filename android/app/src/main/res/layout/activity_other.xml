@@ -16,7 +16,7 @@
             android:id="@+id/other_toolbar"
             android:layout_height="48dp"
             android:layout_width="match_parent"
-            android:background="?attr/colorPrimary"
+            android:background="@color/colorPrimaryDark"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             android:title="手中线"/>
 

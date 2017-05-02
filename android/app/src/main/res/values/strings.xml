@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Location</string>
+    <string name="app_name">手中线</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -15,4 +15,11 @@
     <string name="registRealname">请输入真实姓名（必填）</string>
     <string name="notice_list">通知列表</string>
     <string name="conversation">通知详情</string>
+    <string name="addFriendFragmentTitle">添加好友</string>
+    <string name="editInfoFragmentTitle">编辑个人信息</string>
+    <string name="friendsFragmentTitle">好友列表</string>
+    <string name="loginFragmentTitle">登 录</string>
+    <string name="personalFragmentTitle">个人信息</string>
+    <string name="registFragmentTitle">注 册</string>
+    <string name="imActivityTitle">系统通知</string>
 </resources>

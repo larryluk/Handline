@@ -36,6 +36,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.util.HashMap;
 import java.util.Map;
 
+import butterknife.BindColor;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.rong.imkit.RongIM;
@@ -49,13 +50,14 @@ public class MainActivity extends AppCompatActivity
     private static final String TAG = "MainActivity";
     @BindView(R.id.nav_view) NavigationView navView;
     private TextView userName;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
 
@@ -76,15 +78,18 @@ public class MainActivity extends AppCompatActivity
         EventBus.getDefault().register(this);
         navView.setNavigationItemSelectedListener(this);
         Resources resource=(Resources)getBaseContext().getResources();
-        ColorStateList csl=(ColorStateList)resource.getColorStateList(R.color.white);
+        ColorStateList csl=(ColorStateList)resource.getColorStateList(R.color.line);
         navView.setItemTextColor(csl);
+
+        SharedPreferences sp = getSharedPreferences(Constants.USER_KEY, Constants.MODE_PRIVATE);
+        String strUserName = sp.getString(Constants.REAL_NAME, "点击logo登录");
 
         //获取导航栏头部控件
         View header = navView.getHeaderView(0);
         ImageView imgHeader = (ImageView) header.findViewById(R.id.imageHeader);
         userName = (TextView) header.findViewById(R.id.userName);
         imgHeader.setOnClickListener(this);
-        userName.setText("点击logo登录");
+        userName.setText(strUserName);
 
         navView.getMenu();
 
@@ -172,6 +177,16 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void changeMenu(@NonNull boolean addFriendFlag, @NonNull boolean registerFlag) {
 
+    }
+
+    /**
+     * 改变标题
+     *
+     * @param title
+     */
+    @Override
+    public void changeTitle(@NonNull String title) {
+        toolbar.setTitle(title);
     }
 
     @Override

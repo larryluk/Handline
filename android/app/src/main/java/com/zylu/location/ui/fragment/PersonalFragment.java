@@ -18,6 +18,7 @@ import com.zylu.location.util.Constants;
 
 import java.util.HashMap;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -38,6 +39,8 @@ public class PersonalFragment extends Fragment {
     TextView tvName;
     @BindView(R.id.tv_email)
     TextView tvEmail;
+    @BindString(R.string.personalFragmentTitle)
+    String title;
     private IFragmentContentManage fragmentContentManage;
 
     @Nullable
@@ -102,5 +105,6 @@ public class PersonalFragment extends Fragment {
         super.onResume();
         if(fragmentContentManage == null) fragmentContentManage = (IFragmentContentManage) getActivity();
         fragmentContentManage.changeMenu(true, false);
+        fragmentContentManage.changeTitle(title);
     }
 }

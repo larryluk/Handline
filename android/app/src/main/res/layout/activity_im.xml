@@ -17,8 +17,8 @@
             android:id="@+id/im_toolbar"
             android:layout_height="48dp"
             android:layout_width="match_parent"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:background="@color/colorPrimaryDark"
+            app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
         <fragment
             android:id="@+id/conversationlist"

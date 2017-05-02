@@ -17,6 +17,7 @@ import com.zylu.location.util.Constants;
 
 
 import butterknife.BindDrawable;
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.rong.imkit.RongIM;
@@ -34,6 +35,7 @@ public class IMActivity extends AppCompatActivity{
     Toolbar imToolbar;
     @BindDrawable(R.drawable.back)
     Drawable back;
+    @BindString(R.string.imActivityTitle) String title;
     private Menu imMenu;
     private static final String TAG = "IMActivity";
 
@@ -122,5 +124,11 @@ public class IMActivity extends AppCompatActivity{
     public void onBackPressed() {
         super.onBackPressed();
         finish();
+    }
+
+    @Override
+    protected void onResume() {
+        imToolbar.setTitle(title);
+        super.onResume();
     }
 }

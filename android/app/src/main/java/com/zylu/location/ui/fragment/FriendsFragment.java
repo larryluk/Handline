@@ -36,6 +36,7 @@ import org.greenrobot.eventbus.EventBus;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -49,6 +50,8 @@ public class FriendsFragment extends Fragment implements FriendsView, OnItemClic
     ListView friends;
     @BindView(R.id.refreshView)
     XRefreshView refreshView;
+    @BindString(R.string.friendsFragmentTitle)
+    String title;
 
     private long lastRefreshTime;
     private ProgressDialog dialog;
@@ -226,5 +229,6 @@ public class FriendsFragment extends Fragment implements FriendsView, OnItemClic
         super.onResume();
         if(fragmentContentManage == null) fragmentContentManage = (IFragmentContentManage) getActivity();
         fragmentContentManage.changeMenu(true, false);
+        fragmentContentManage.changeTitle(title);
     }
 }

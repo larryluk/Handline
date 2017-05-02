@@ -33,6 +33,7 @@ import org.greenrobot.eventbus.Subscribe;
 import java.util.HashMap;
 
 import butterknife.BindDrawable;
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -135,6 +136,15 @@ public class OtherActivity extends AppCompatActivity implements IFragmentContent
         headMenu.getItem(1).setEnabled(registerFlag);
     }
 
+    /**
+     * 改变标题
+     *
+     * @param title
+     */
+    @Override
+    public void changeTitle(@NonNull String title) {
+        otherToolbar.setTitle(title);
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

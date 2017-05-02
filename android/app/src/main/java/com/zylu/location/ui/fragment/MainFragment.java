@@ -207,7 +207,7 @@ public class MainFragment extends Fragment implements AMapLocationListener {
     public void onDetach() {
         super.onDetach();
         fragmentContentManage = null;
-        mLocationClient.onDestroy();
+        if(mLocationClient != null) mLocationClient.onDestroy();
     }
 
     @Override

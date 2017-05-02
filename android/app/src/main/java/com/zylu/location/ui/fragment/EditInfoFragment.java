@@ -26,6 +26,7 @@ import com.zylu.location.widget.CleanableEditView;
 
 import org.greenrobot.eventbus.EventBus;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -42,6 +43,7 @@ public class EditInfoFragment extends Fragment implements InfoView {
     Button infoSubmit;
     @BindView(R.id.flag_img)
     CircleImageView flagImg;
+    @BindString(R.string.editInfoFragmentTitle) String title;
     private IFragmentContentManage contentManage;
     private ProgressDialog dialog;
     private EditInfoPresenter editInfoPresenter;
@@ -59,6 +61,8 @@ public class EditInfoFragment extends Fragment implements InfoView {
 
     private void init() {
         if (contentManage == null) contentManage = (IFragmentContentManage) getActivity();
+
+        contentManage.changeTitle(title);
 
         editValue.setAlpha(0.5f);
         dialog = new ProgressDialog(getActivity());
