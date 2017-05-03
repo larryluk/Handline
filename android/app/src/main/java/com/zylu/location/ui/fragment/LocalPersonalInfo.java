@@ -1,0 +1,48 @@
+package com.zylu.location.ui.fragment;
+
+import android.app.Fragment;
+import android.content.Context;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.zylu.location.R;
+import com.zylu.location.mvp.view.IFragmentContentManage;
+
+import butterknife.BindString;
+
+/**
+ * Created by Larry on 2017/5/3.
+ */
+
+public class LocalPersonalInfo extends Fragment {
+    private IFragmentContentManage contentManage;
+
+    @BindString(R.string.localInfoFragmentTitle)
+    String title;
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_local_info, container, false);
+        contentManage.changeTitle(title);
+        return view;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        if(context instanceof IFragmentContentManage) {
+            contentManage = (IFragmentContentManage) context;
+        }
+
+        super.onAttach(context);
+    }
+
+    @Override
+    public void onDetach() {
+        contentManage = null;
+        super.onDetach();
+    }
+}

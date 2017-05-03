@@ -19,9 +19,11 @@ import android.widget.Toast;
 import com.zylu.location.R;
 import com.zylu.location.event.TokenTimeOutEvent;
 import com.zylu.location.mvp.view.IFragmentContentManage;
+import com.zylu.location.ui.fragment.AboutMyself;
 import com.zylu.location.ui.fragment.AddFriendFragment;
 import com.zylu.location.ui.fragment.EditInfoFragment;
 import com.zylu.location.ui.fragment.FriendsFragment;
+import com.zylu.location.ui.fragment.LocalPersonalInfo;
 import com.zylu.location.ui.fragment.LoginFragment;
 import com.zylu.location.ui.fragment.PersonalFragment;
 import com.zylu.location.ui.fragment.RegisterFragment;
@@ -233,6 +235,13 @@ public class OtherActivity extends AppCompatActivity implements IFragmentContent
                 fragmentTransaction.add(FRAGMENT_BODY, editInfoFragment, TAG);
                 break;
 
+            case R.layout.fragment_about_myself:
+                fragmentTransaction.add(FRAGMENT_BODY, new AboutMyself(), TAG);
+                break;
+
+            case R.layout.fragment_local_info:
+                fragmentTransaction.add(FRAGMENT_BODY, new LocalPersonalInfo(), TAG);
+                break;
             default:
 
         }

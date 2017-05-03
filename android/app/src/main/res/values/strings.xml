@@ -22,4 +22,7 @@
     <string name="personalFragmentTitle">个人信息</string>
     <string name="registFragmentTitle">注 册</string>
     <string name="imActivityTitle">系统通知</string>
+    <string name="sysSettingFragmentTitle">系统设置</string>
+    <string name="localInfoFragmentTitle">本地信息</string>
+    <string name="aboutMyselfFragmentTitle">关于应用</string>
 </resources>

@@ -116,10 +116,15 @@ public class MainFragment extends Fragment implements AMapLocationListener {
 
         Toast.makeText(getActivity(), "定位中...", Toast.LENGTH_SHORT).show();
 
-
     }
 
-
+    /**
+     *  更新地图
+     * @param latitude 经度
+     * @param longitude 纬度
+     * @param poiName
+     * @param cityName
+     */
     private void updateMap(@NonNull double latitude, @NonNull double longitude,
                            String poiName, String cityName) {
 
