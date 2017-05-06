@@ -2,7 +2,6 @@ dea/workspace.xml
 .idea/dictionaries/myj.xml
 .idea/
 .DS_Store
-.settings  
 .target
 **/.settings
 **/.eclipse
@@ -50,3 +49,4 @@ captures/
 
 # Keystore files
 *.jks
+mongo.properties
