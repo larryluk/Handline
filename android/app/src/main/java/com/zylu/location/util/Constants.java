@@ -42,6 +42,12 @@ public interface Constants {
     String SYETEM_OTHER = "1";
     String SYSTEM_LOCATION = "2";
 
+    String LOCAL_AGE = "local_age";
+    String LOCAL_ADDRESS = "local_address";
+    String LOCAL_HELP_PHONE = "local_help_phone";
+    String LOCAL_BLOOD = "local_blood";
+    String LOCAL_ILL_HISTORY = "local_ill_history";
+
 
     public static class Keys {
         public static String WEB_URL = "web_url";

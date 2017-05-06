@@ -133,7 +133,13 @@ public class MainActivity extends AppCompatActivity
                 startActivityForResult(intent, Constants.LOGIN_REQUEST_CODE);
                 break;
             case R.id.nav_system:
-                Toast.makeText(this, "还没想好干啥...", Toast.LENGTH_SHORT).show();
+                bundle = new Bundle();
+                bundle.putInt("fragmentID", R.layout.fragment_sys_setting);
+
+                intent = new Intent(MainActivity.this, OtherActivity.class);
+                intent.putExtras(bundle);
+
+                startActivityForResult(intent, Constants.LOGIN_REQUEST_CODE);
                 break;
             case R.id.nav_exit:
                 finish();
@@ -175,7 +181,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void changeMenu(@NonNull boolean addFriendFlag, @NonNull boolean registerFlag) {
+    public void changeMenu(@NonNull boolean addFriendFlag, @NonNull boolean registerFlag, boolean saveFlag) {
 
     }
 

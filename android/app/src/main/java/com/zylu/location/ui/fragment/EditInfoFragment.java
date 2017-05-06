@@ -159,6 +159,6 @@ public class EditInfoFragment extends Fragment implements InfoView {
     public void onResume() {
         super.onResume();
         if (contentManage == null) contentManage = (IFragmentContentManage) getActivity();
-        contentManage.changeMenu(false, false);
+        contentManage.changeMenu(false, false, false);
     }
 }

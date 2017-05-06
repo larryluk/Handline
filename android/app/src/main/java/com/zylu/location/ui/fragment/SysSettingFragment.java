@@ -46,6 +46,8 @@ public class SysSettingFragment extends Fragment {
     }
 
     public void init() {
+        if(contentManage == null) contentManage = (IFragmentContentManage) getActivity();
+
         contentManage.changeTitle(title);
     }
 
@@ -61,10 +63,11 @@ public class SysSettingFragment extends Fragment {
 
     @Override
     public void onAttach(Context context) {
+        super.onAttach(context);
+
         if(context instanceof IFragmentContentManage) {
             contentManage = (IFragmentContentManage) context;
         }
-        super.onAttach(context);
     }
 
     @Override

@@ -27,6 +27,7 @@ import com.zylu.location.ui.fragment.LocalPersonalInfo;
 import com.zylu.location.ui.fragment.LoginFragment;
 import com.zylu.location.ui.fragment.PersonalFragment;
 import com.zylu.location.ui.fragment.RegisterFragment;
+import com.zylu.location.ui.fragment.SysSettingFragment;
 import com.zylu.location.util.Constants;
 
 import org.greenrobot.eventbus.EventBus;
@@ -86,6 +87,10 @@ public class OtherActivity extends AppCompatActivity implements IFragmentContent
                 fragmentTransaction.add(FRAGMENT_BODY, new PersonalFragment(), TAG);
                 break;
 
+            case R.layout.fragment_sys_setting:
+                fragmentTransaction.add(FRAGMENT_BODY, new SysSettingFragment(), TAG);
+                break;
+
             case R.layout.fragment_friends:
                 fragmentTransaction.add(FRAGMENT_BODY, new FriendsFragment(), TAG);
                 break;
@@ -117,7 +122,7 @@ public class OtherActivity extends AppCompatActivity implements IFragmentContent
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_other, menu);
         headMenu = menu;
-        changeMenu(true, false);
+        changeMenu(true, false, false);
         return true;
     }
 
@@ -127,15 +132,17 @@ public class OtherActivity extends AppCompatActivity implements IFragmentContent
      * @param registerFlag  注册按钮显示标准
      */
     @Override
-    public void changeMenu(boolean addFriendFlag, boolean registerFlag){
+    public void changeMenu(boolean addFriendFlag, boolean registerFlag, boolean saveFlag){
         if(headMenu == null) return ;
 
         this.invalidateOptionsMenu();
         headMenu.getItem(0).setVisible(addFriendFlag);
-        headMenu.getItem(1).setVisible(registerFlag);
+        headMenu.getItem(1).setVisible(saveFlag);
+        headMenu.getItem(2).setVisible(registerFlag);
 
         headMenu.getItem(0).setEnabled(addFriendFlag);
-        headMenu.getItem(1).setEnabled(registerFlag);
+        headMenu.getItem(1).setVisible(saveFlag);
+        headMenu.getItem(2).setEnabled(registerFlag);
     }
 
     /**
@@ -158,7 +165,7 @@ public class OtherActivity extends AppCompatActivity implements IFragmentContent
         switch (item.getItemId()) {
             case 16908332: //toolbar 返回按钮
                 if(now instanceof PersonalFragment || now instanceof LoginFragment
-                        || now instanceof FriendsFragment) {
+                        || now instanceof FriendsFragment || now instanceof SysSettingFragment) {
                     finish();
                 }
                 fragmentManager.popBackStack();

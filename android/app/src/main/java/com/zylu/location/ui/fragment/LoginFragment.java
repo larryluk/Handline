@@ -155,7 +155,7 @@ public class LoginFragment extends Fragment implements LoginView {
         super.onResume();
         if (fragmentContentManage == null)
             fragmentContentManage = (IFragmentContentManage) getActivity();
-        fragmentContentManage.changeMenu(false, true);
+        fragmentContentManage.changeMenu(false, false, true);
         fragmentContentManage.changeTitle(title);
 
     }

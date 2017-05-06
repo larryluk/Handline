@@ -26,16 +26,17 @@ public class AboutMyself extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_about_myself, container, false);
+        if(contentManage == null) contentManage = (IFragmentContentManage) getActivity();
         contentManage.changeTitle(title);
         return view;
     }
 
     @Override
     public void onAttach(Context context) {
+        super.onAttach(context);
         if(context instanceof IFragmentContentManage) {
             contentManage = (IFragmentContentManage) context;
         }
-        super.onAttach(context);
     }
 
     @Override

@@ -173,6 +173,6 @@ public class AddFriendFragment extends Fragment implements AddFriendView {
     public void onResume() {
         super.onResume();
         if(fragmentContentManage == null) fragmentContentManage = (IFragmentContentManage) getActivity();
-        fragmentContentManage.changeMenu(false, false);
+        fragmentContentManage.changeMenu(false, false,false);
     }
 }

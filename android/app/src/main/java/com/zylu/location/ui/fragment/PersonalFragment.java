@@ -104,7 +104,7 @@ public class PersonalFragment extends Fragment {
     public void onResume() {
         super.onResume();
         if(fragmentContentManage == null) fragmentContentManage = (IFragmentContentManage) getActivity();
-        fragmentContentManage.changeMenu(true, false);
+        fragmentContentManage.changeMenu(true, false, false);
         fragmentContentManage.changeTitle(title);
     }
 }

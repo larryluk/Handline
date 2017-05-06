@@ -228,7 +228,7 @@ public class FriendsFragment extends Fragment implements FriendsView, OnItemClic
     public void onResume() {
         super.onResume();
         if(fragmentContentManage == null) fragmentContentManage = (IFragmentContentManage) getActivity();
-        fragmentContentManage.changeMenu(true, false);
+        fragmentContentManage.changeMenu(true, false, false);
         fragmentContentManage.changeTitle(title);
     }
 }

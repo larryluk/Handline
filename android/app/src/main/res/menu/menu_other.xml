@@ -8,6 +8,10 @@
         android:title="注册"
         android:orderInCategory="1"
         app:showAsAction="ifRoom" />
+    <item android:id="@+id/save"
+        android:title="保存"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom" />
     <item android:id="@+id/add_friend"
         android:title="加好友"
         android:icon="@drawable/add_friend"

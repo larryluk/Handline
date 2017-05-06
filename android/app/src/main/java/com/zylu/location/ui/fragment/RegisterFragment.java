@@ -129,6 +129,6 @@ public class RegisterFragment extends Fragment implements LoginView {
     public void onResume() {
         super.onResume();
         if(fragmentContentManage == null) fragmentContentManage = (IFragmentContentManage) getActivity();
-        fragmentContentManage.changeMenu(false, false);
+        fragmentContentManage.changeMenu(false, false,false);
     }
 }

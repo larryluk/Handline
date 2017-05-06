@@ -18,7 +18,7 @@ public interface IFragmentContentManage {
      */
     void onChange(@NonNull int FragmentID, HashMap<String, Object> params);
 
-    void changeMenu(@NonNull boolean addFriendFlag, @NonNull boolean registerFlag);
+    void changeMenu(@NonNull boolean addFriendFlag, @NonNull boolean registerFlag, @NonNull boolean saveFlag);
 
     /**
      * 改变标题
