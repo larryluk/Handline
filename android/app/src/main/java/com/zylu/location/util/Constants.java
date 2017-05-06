@@ -14,6 +14,7 @@ public interface Constants {
 //    static final String BASE_URL = "http://192.168.1.107:8080/HandLine/";
 //    static final String BASE_URL = "http://192.168.1.108:8080/HandLine/";
     static final String BASE_URL = "http://115.159.1.254:80/HandLine/";
+    String MYSELF_URL = "http://115.159.1.254/myself.html";
 
     String RESULT_OK = "0";
     String RESULT_ERR = "1";
