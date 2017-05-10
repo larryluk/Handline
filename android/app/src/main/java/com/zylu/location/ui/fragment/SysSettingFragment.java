@@ -48,6 +48,7 @@ public class SysSettingFragment extends Fragment {
     public void init() {
         if(contentManage == null) contentManage = (IFragmentContentManage) getActivity();
 
+        contentManage.changeMenu(false, false, false);
         contentManage.changeTitle(title);
     }
 

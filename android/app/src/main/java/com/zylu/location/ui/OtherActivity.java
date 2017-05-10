@@ -141,7 +141,7 @@ public class OtherActivity extends AppCompatActivity implements IFragmentContent
         headMenu.getItem(2).setVisible(registerFlag);
 
         headMenu.getItem(0).setEnabled(addFriendFlag);
-        headMenu.getItem(1).setVisible(saveFlag);
+        headMenu.getItem(1).setEnabled(saveFlag);
         headMenu.getItem(2).setEnabled(registerFlag);
     }
 
@@ -177,6 +177,14 @@ public class OtherActivity extends AppCompatActivity implements IFragmentContent
                 break;
 
             case R.id.add_friend:
+                SharedPreferences sp = getSharedPreferences(Constants.USER_KEY, Constants.MODE_PRIVATE);
+                String id = sp.getString(Constants.USER_ID, "");
+                if("".equals(id)) {
+                    Toast.makeText(OtherActivity.this, "请先登录", Toast.LENGTH_SHORT).show();
+                    fragmentTransaction.show(now);
+                    break;
+                }
+
                 fragmentTransaction.add(FRAGMENT_BODY, new AddFriendFragment(), TAG);
                 break;
 

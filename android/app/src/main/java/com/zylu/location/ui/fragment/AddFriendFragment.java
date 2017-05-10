@@ -67,7 +67,7 @@ public class AddFriendFragment extends Fragment implements AddFriendView {
 
         dialog = new ProgressDialog(getActivity());
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        dialog.setMessage("请稍等...");
+        dialog.setMessage(Constants.LOADING_MSG);
 
         addFriendPresenter = new AddFriendPresenterImpl();
         addFriendPresenter.attachView(this);

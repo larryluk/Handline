@@ -81,7 +81,7 @@ public class FriendsFragment extends Fragment implements FriendsView, OnItemClic
 
         dialog = new ProgressDialog(getActivity());
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        dialog.setMessage("获取好友位置...");
+        dialog.setMessage(Constants.LOADING_MSG);
 
 
         refreshView.setXRefreshViewListener(myRefreshView);

@@ -43,7 +43,7 @@ public class AboutMyself extends Fragment {
     private void init() {
         dialog = new ProgressDialog(getActivity());
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        dialog.setMessage("正在访问...");
+        dialog.setMessage(Constants.LOADING_MSG);
         dialog.show();
 
         if (contentManage == null) contentManage = (IFragmentContentManage) getActivity();

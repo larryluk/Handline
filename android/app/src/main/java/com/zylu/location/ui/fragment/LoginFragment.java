@@ -71,6 +71,7 @@ public class LoginFragment extends Fragment implements LoginView {
             fragmentContentManage = (IFragmentContentManage) getActivity();
         }
 
+        fragmentContentManage.changeMenu(false, false, false);
         userName.setAlpha(0.8f);
         password.setAlpha(0.8f);
 
@@ -82,7 +83,7 @@ public class LoginFragment extends Fragment implements LoginView {
 
         dialog = new ProgressDialog(getActivity());
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        dialog.setMessage("正在搜索中");
+        dialog.setMessage(Constants.LOADING_MSG);
     }
 
     @OnClick(R.id.loginBtn)

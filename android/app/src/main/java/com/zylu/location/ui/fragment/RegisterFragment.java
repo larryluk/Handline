@@ -21,6 +21,7 @@ import com.zylu.location.mvp.presenter.impl.RegisterPresenterImpl;
 import com.zylu.location.mvp.view.BaseView;
 import com.zylu.location.mvp.view.IFragmentContentManage;
 import com.zylu.location.mvp.view.LoginView;
+import com.zylu.location.util.Constants;
 import com.zylu.location.widget.CleanableEditView;
 
 import butterknife.BindString;
@@ -63,11 +64,12 @@ public class RegisterFragment extends Fragment implements LoginView {
     private void init() {
         dialog = new ProgressDialog(getActivity());
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        dialog.setMessage("正在搜索中");
+        dialog.setMessage(Constants.LOADING_MSG);
 
         registerPresenter = new RegisterPresenterImpl();
         registerPresenter.attachView(this);
 
+        if(fragmentContentManage == null) fragmentContentManage = (IFragmentContentManage) getActivity();
         fragmentContentManage.changeTitle(title);
     }
 

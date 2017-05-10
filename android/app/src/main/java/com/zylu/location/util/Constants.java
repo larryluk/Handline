@@ -13,8 +13,8 @@ public interface Constants {
 //    static final String BASE_URL = "http://192.168.1.106:8080/HandLine/";
 //    static final String BASE_URL = "http://192.168.1.107:8080/HandLine/";
 //    static final String BASE_URL = "http://192.168.1.108:8080/HandLine/";
-    static final String BASE_URL = "http://115.159.1.254:80/HandLine/";
-    String MYSELF_URL = "http://115.159.1.254/myself.html";
+    static final String BASE_URL = "http://118.89.185.220:80/HandLine/";
+    String MYSELF_URL = "http://118.89.185.220/myself.html";
 
     String RESULT_OK = "0";
     String RESULT_ERR = "1";
@@ -49,6 +49,7 @@ public interface Constants {
     String LOCAL_BLOOD = "local_blood";
     String LOCAL_ILL_HISTORY = "local_ill_history";
 
+    String LOADING_MSG = "玩命加载中...";
 
     public static class Keys {
         public static String WEB_URL = "web_url";

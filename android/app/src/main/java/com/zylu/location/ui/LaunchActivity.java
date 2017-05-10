@@ -72,9 +72,8 @@ public class LaunchActivity extends AppCompatActivity {
              */
             @Override
             public void onError(RongIMClient.ErrorCode errorCode) {
-                EventBus.getDefault().post(new TokenTimeOutEvent());
-
-                Intent intent = new Intent(LaunchActivity.this, OtherActivity.class);
+                Toast.makeText(LaunchActivity.this, "连接融云失败，错误码：" + errorCode, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(LaunchActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         };

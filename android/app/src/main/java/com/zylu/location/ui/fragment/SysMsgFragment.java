@@ -51,7 +51,7 @@ public class SysMsgFragment extends Fragment implements SysMsgView{
     private void init(View view) {
         dialog = new ProgressDialog(getActivity());
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        dialog.setMessage("正在搜索中");
+        dialog.setMessage(Constants.LOADING_MSG);
 
         sysMsgPresenter = new SysMsgPresenterImpl();
         sysMsgPresenter.attachView(this);

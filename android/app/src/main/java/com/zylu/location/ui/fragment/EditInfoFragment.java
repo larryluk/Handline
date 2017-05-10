@@ -67,7 +67,7 @@ public class EditInfoFragment extends Fragment implements InfoView {
         editValue.setAlpha(0.5f);
         dialog = new ProgressDialog(getActivity());
         dialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        dialog.setMessage("正在搜索中");
+        dialog.setMessage(Constants.LOADING_MSG);
 
         editInfoPresenter = new EditInfoPresenterImpl();
         editInfoPresenter.attachView(this);
